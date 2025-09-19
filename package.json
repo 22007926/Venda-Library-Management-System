@@ -1,0 +1,34 @@
+{
+  "name": "venda-university-library-management-system",
+  "version": "1.0.0",
+  "description": "A comprehensive web-based library management system for Venda University",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "init-db": "node database/init-db.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "library",
+    "management",
+    "university",
+    "nodejs",
+    "express",
+    "sqlite"
+  ],
+  "author": "Venda University IT Department",
+  "license": "MIT"
+}

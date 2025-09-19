@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - VULMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">📚 VULMS</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/library">Library</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <div class="user-info">
+                    <span id="userWelcome">Welcome!</span>
+                    <button class="btn btn-small btn-secondary" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <div class="container" style="padding: 2rem 1rem;">
+        <h1 id="dashboardTitle" class="mb-4" style="color: var(--text-primary);">My Library Dashboard</h1>
+
+        <!-- Currently Borrowed Books -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 style="color: var(--text-primary); margin: 0;">Currently Borrowed Books</h2>
+            </div>
+            <div class="card-body">
+                <div id="currentBooksLoading" class="loading">
+                    <div class="spinner"></div>
+                    Loading your borrowed books...
+                </div>
+                <div id="currentBooksContent" style="display: none;"></div>
+                <div id="noBooksMessage" style="display: none; text-align: center; padding: 2rem; color: var(--text-secondary);">
+                    <h3>No books currently borrowed</h3>
+                    <p>Visit the <a href="/library" style="color: var(--primary-color);">library</a> to browse and borrow books.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Borrowing History -->
+        <div class="card">
+            <div class="card-header">
+                <h2 style="color: var(--text-primary); margin: 0;">Borrowing History</h2>
+            </div>
+            <div class="card-body">
+                <div id="historyLoading" class="loading">
+                    <div class="spinner"></div>
+                    Loading your borrowing history...
+                </div>
+                <div id="historyContent" style="display: none;"></div>
+                <div id="noHistoryMessage" style="display: none; text-align: center; padding: 2rem; color: var(--text-secondary);">
+                    <h3>No borrowing history</h3>
+                    <p>Your borrowing history will appear here once you start borrowing books.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" style="position: fixed; top: 100px; right: 20px; z-index: 1000;"></div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

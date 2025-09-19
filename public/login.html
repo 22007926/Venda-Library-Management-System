@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VULMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">📚 VULMS</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/library">Library</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <a href="/login" class="btn btn-secondary">Login</a>
+                <a href="/signup" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <div class="container" style="padding: 3rem 1rem;">
+        <div class="card" style="max-width: 400px; margin: 0 auto;">
+            <div class="card-body">
+                <h2 class="text-center mb-4" style="color: var(--text-primary);">Login to VULMS</h2>
+                
+                <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="loginBtn">
+                        Login
+                    </button>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="/signup" style="color: var(--primary-color);">Sign up here</a></p>
+                </div>
+
+                <div class="card mt-4" style="background: var(--bg-light); border: 1px solid var(--border-color);">
+                    <div class="card-body" style="padding: 1rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-primary);">Test Accounts</h4>
+                        <p style="margin: 0.25rem 0; font-size: 0.8rem; color: var(--text-secondary);">
+                            <strong>Admin:</strong> admin@venda.ac.za / admin123
+                        </p>
+                        <p style="margin: 0.25rem 0; font-size: 0.8rem; color: var(--text-secondary);">
+                            <strong>Student:</strong> student1@venda.ac.za / student123
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

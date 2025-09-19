@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - VULMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">📚 VULMS</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/library">Library</a></li>
+                <li><a href="/admin">Admin Dashboard</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <div class="user-info">
+                    <span id="userWelcome">Admin Panel</span>
+                    <button class="btn btn-small btn-secondary" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <div class="container" style="padding: 2rem 1rem;">
+        <h1 class="mb-4" style="color: var(--text-primary);">📊 Library Administration Dashboard</h1>
+
+        <!-- Statistics Cards -->
+        <div id="statsLoading" class="loading">
+            <div class="spinner"></div>
+            Loading statistics...
+        </div>
+        
+        <div id="statsContent" class="stats-grid mb-4" style="display: none;"></div>
+
+        <!-- Add New Book Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 style="color: var(--primary-color); margin: 0;">📚 Add New Book</h2>
+            </div>
+            <div class="card-body">
+                <form id="addBookForm" class="add-book-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookTitle">Book Title *</label>
+                            <input type="text" id="bookTitle" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookAuthor">Author *</label>
+                            <input type="text" id="bookAuthor" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookGenre">Genre *</label>
+                            <select id="bookGenre" class="form-control" required>
+                                <option value="">Select Genre</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Physics">Physics</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="AI">Artificial Intelligence</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Biology">Biology</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="Literature">Literature</option>
+                                <option value="History">History</option>
+                                <option value="Philosophy">Philosophy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookISBN">ISBN</label>
+                            <input type="text" id="bookISBN" class="form-control" placeholder="978-0123456789">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookCoverImage">Cover Image URL</label>
+                            <input type="url" id="bookCoverImage" class="form-control" placeholder="https://example.com/book-cover.jpg">
+                            <small style="color: var(--text-secondary);">Leave empty to use default cover</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalCopies">Total Copies</label>
+                            <input type="number" id="totalCopies" class="form-control" min="1" value="1">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="addBookBtn">
+                        Add Book to Library
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- All Transactions -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 style="color: var(--text-primary); margin: 0;">All Library Transactions</h2>
+            </div>
+            <div class="card-body">
+                <div id="transactionsLoading" class="loading">
+                    <div class="spinner"></div>
+                    Loading transactions...
+                </div>
+                <div id="transactionsContent" style="display: none; overflow-x: auto;"></div>
+            </div>
+        </div>
+
+        <!-- Overdue Books -->
+        <div class="card">
+            <div class="card-header">
+                <h2 style="color: var(--accent-color); margin: 0;">⚠️ Overdue Books</h2>
+            </div>
+            <div class="card-body">
+                <div id="overdueLoading" class="loading">
+                    <div class="spinner"></div>
+                    Loading overdue books...
+                </div>
+                <div id="overdueContent" style="display: none; overflow-x: auto;"></div>
+                <div id="noOverdueMessage" style="display: none; text-align: center; padding: 2rem; color: var(--success-color);">
+                    <h3>✅ No overdue books!</h3>
+                    <p>All books are returned on time or still within the borrowing period.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" style="position: fixed; top: 100px; right: 20px; z-index: 1000;"></div>
+
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

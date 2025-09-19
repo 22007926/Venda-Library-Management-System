@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - VULMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">📚 VULMS</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/library">Library</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <a href="/login" class="btn btn-secondary">Login</a>
+                <a href="/signup" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <div class="container" style="padding: 2rem 1rem;">
+        <h1 class="text-center mb-4" style="color: var(--text-primary);">Library Catalog</h1>
+        
+        <!-- Search and Filter -->
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="form-control" 
+                       placeholder="Search books by title or author..." 
+                       autocomplete="off">
+            </div>
+            <div class="filter-dropdown">
+                <select id="genreFilter" class="form-control">
+                    <option value="">All Genres</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            Loading books...
+        </div>
+
+        <!-- Books Grid -->
+        <div id="booksGrid" class="books-grid" style="display: none;"></div>
+
+        <!-- No Results -->
+        <div id="noResults" class="text-center" style="display: none; padding: 3rem; color: var(--text-secondary);">
+            <h3>No books found</h3>
+            <p>Try adjusting your search criteria or filters.</p>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" style="position: fixed; top: 100px; right: 20px; z-index: 1000;"></div>
+
+    <script src="js/library.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
