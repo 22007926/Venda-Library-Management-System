@@ -116,23 +116,6 @@ VULMS addresses critical issues in traditional library management:
 ### Admin Panel
 ![Admin Panel](docs/screenshots/admin.png)
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 Documentation
-
-- [📖 Setup Instructions](INSTRUCTIONS.md) - Detailed setup guide
-- [🎯 Project Presentation](PRESENTATION.md) - Technical presentation
-- [🔧 API Documentation](docs/API.md) - REST API reference
-- [🎨 UI Guidelines](docs/UI.md) - Design system documentation
-
 ## 🐛 Known Issues
 
 - Book cover images must be accessible URLs
@@ -148,17 +131,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - [ ] Multi-language support
 - [ ] Advanced reporting features
 
-## 📞 Support
 
-For support and questions:
-
-- 📧 Email: support@venda.ac.za
-- 🐛 Issues: [GitHub Issues](https://github.com/your-username/vulms/issues)
-- 📚 Documentation: [Wiki](https://github.com/your-username/vulms/wiki)
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
