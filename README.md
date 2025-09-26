@@ -39,7 +39,7 @@ npm install
 npm run init-db
 
 # Start the server
-npm start
+npm start/node server.js
 ```
 
 Visit `http://localhost:3000` to access VULMS.
